@@ -31,7 +31,7 @@
 |-------|-------------|
 | **Full Name** | [Abdulrhman Suliman AlQasimi] |
 | **Student ID** | [444050388] |
-| **University Email** | [444050388@std.psau.edu.sa |
+| **University Email** | [444050388@std.psau.edu.sa] |
 | **GitHub Username** | [Abdulrahman-Qasimi] |
 | **Repository Link** | [https://github.com/Abdulrahman-Qasimi/OS-Assignment1-444050388-Abdulrahman-AlQasimi] |
  
