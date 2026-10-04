@@ -143,9 +143,11 @@ all in the same day [Sunday 04/10/2026] but different times of the day.
 
 **Challenges**:
 Seeing the visual codes of colors and Hashmap trying to find where i should add the context Switch Count increases, 
+
 **Solution**:
 I got somewhat familiar with it the colors and tried to add and change of my own code in Visual Studio,
 For Context switch count I followed the code trying to find where could be a reasonable place and found it better under while loop when adding in queue.
+
 **Time spent**:
 ~45 Minutes 
 ---
