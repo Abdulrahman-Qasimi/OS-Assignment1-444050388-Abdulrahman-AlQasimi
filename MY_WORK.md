@@ -152,17 +152,28 @@ For Context switch count I followed the code trying to find where could be a rea
 ~45 Minutes 
 ---
 
-### Entry 2 - [Date and Time]
-**What I did**:
+### Entry 2 - [07/10/2026 9PM]
+**What I did**: 
+
+I wrote about Waiting time function,
+so we now are able to know how much the task has been in the ready queue and the total turn around time. 
 
 **Details**:
 
+First I searched for how to add a table to easily view the time spent in each part to know the burst, waiting, and the turnaround in milli Seconds,
+then I put update Waiting time in  2 places one in the Run() and the other in RunToCompletion(),
+I add New Getters functions like get waiting time and get turnaround time and mark ready and update waiting time.
+
 **Challenges**:
+
+Understanding where to add update waiting time.
 
 **Solution**:
 
-**Time spent**:
+first time it runs and if it returns to ready queue then run to completion are the places to get the time right.
 
+**Time spent**:
+~1 hour
 ---
 
 ### Entry 3 - [Date and Time]
