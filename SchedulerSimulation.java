@@ -3,6 +3,8 @@ import java.util.Queue;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
 
 // ANSI Color Codes for enhanced terminal output
 class Colors {
@@ -30,6 +32,9 @@ class Process implements Runnable {
     private int timeQuantum; // Time slice (time quantum) allowed per CPU access (in milliseconds)
     private int remainingTime; // Time left for the process to finish its execution
     private int priority;
+    private long arrivalTime;
+    private long waitingTime =0;
+    private long lastReadyTime;
 
     // Constructor to initialize the process with name, burst time, and time quantum
     public Process(String name, int burstTime, int timeQuantum, int priority) {
@@ -38,6 +43,8 @@ class Process implements Runnable {
         this.timeQuantum = timeQuantum;
         this.remainingTime = burstTime; // Initially, remaining time is equal to the burst time
         this.priority = priority;
+        this.arrivalTime = System.currentTimeMillis();
+        this.lastReadyTime = this.arrivalTime;
     }
 
     // This method will be called when the thread for this process is started
@@ -45,6 +52,7 @@ class Process implements Runnable {
     public void run() {
         // Simulate running for either the time quantum or remaining time, whichever is smaller
         int runTime = Math.min(timeQuantum, remainingTime); // Run for the smaller of the two times
+        updateWaitingTime();
         
         // Show quantum execution starting
         String quantumBar = createProgressBar(0, 15);
@@ -111,8 +119,10 @@ class Process implements Runnable {
     
     // Method to run the last process to completion, ignoring the time quantum
     public void runToCompletion() {
+                    updateWaitingTime();
         try {
             // Run for the remaining time without splitting into smaller time slices
+            
             System.out.println(Colors.BRIGHT_CYAN + "  ⚡ " + Colors.BOLD + Colors.CYAN + name + 
                               Colors.RESET + Colors.BRIGHT_CYAN + " is the last process, running to completion" + 
                               Colors.RESET + " [" + remainingTime + "ms]");
@@ -147,7 +157,27 @@ class Process implements Runnable {
     public int getPriority(){ 
         return priority;
     }
+public long getWaitingTime(){
+    return waitingTime;
 }
+
+public long getTurnaroundTime(){
+    return waitingTime + burstTime;
+}
+
+public void markReady(){
+    this.lastReadyTime = System.currentTimeMillis();
+}
+
+public void updateWaitingTime(){
+    long now = System.currentTimeMillis();
+    this.waitingTime += (now - this.lastReadyTime);
+}
+    
+}
+
+
+    
 
 public class SchedulerSimulation {
 
@@ -159,6 +189,8 @@ public class SchedulerSimulation {
         int studentID = 444050388;  // ← CHANGE THIS TO YOUR ACTUAL STUDENT ID
         
         Random random = new Random(studentID);
+
+        List<Process> allProcesses = new ArrayList<>();
         
         // Define the time quantum in milliseconds (the maximum time a process gets in one round)
         // Choose a random number between 2000 and 5000 ms with a step of 1000 ms
@@ -209,6 +241,8 @@ public class SchedulerSimulation {
             
             // Create a new process object with a unique name, burst time, and the defined time quantum
             Process process = new Process("P" + i, burstTime, timeQuantum, priority);
+
+            allProcesses.add(process);
             
             // Add the process to the ready queue and the map
             addProcessToQueue(process, processQueue, processMap);
@@ -267,14 +301,14 @@ public class SchedulerSimulation {
             if (!process.isFinished()) {
                 // If the process still has remaining time, check if there are more processes in queue
                 if (!processQueue.isEmpty()) {
-                    // Re-enqueue the process to give it another chance to run in the next round
+                    // Re-enqueue the process to give it another chance to  in the next round
                     addProcessToQueue(process, processQueue, processMap);
                 } else {
-                    // If this is the last process in the queue, run it to completion
+                    // If this is the last process in the queue,  it to completion
                     System.out.println(Colors.BRIGHT_YELLOW + "  ⚠ " + Colors.CYAN + process.getName() + 
-                                      Colors.RESET + Colors.YELLOW + " is the last process → running to completion" + 
+                                      Colors.RESET + Colors.YELLOW + " is the last process → ning to completion" + 
                                       Colors.RESET);
-                    process.runToCompletion(); // Run until the process completes
+                    process.runToCompletion(); //  until the process completes
                 }
             }
         }
@@ -291,12 +325,16 @@ public class SchedulerSimulation {
                           "╚════════════════════════════════════════════════════════════════════════════════╝" + 
                           Colors.RESET + "\n");
         System.out.println("Total context switches " + contextSwitchCount + "\n");
+        System.out.println("Process\tBurst\tWaiting\tTurnaround");
+        for (Process p : allProcesses) {
+            System.out.println(p.getName() + "\t" + p.getBurstTime() + "\t" + p.getWaitingTime() + "\t" + p.getTurnaroundTime());
+        }
     }
     
     // Method to add a process to the queue and map, while printing a "ready" message
     public static void addProcessToQueue(Process process, Queue<Thread> processQueue, 
                                         Map<Thread, Process> processMap) {
-        // Create a new thread to run the process
+        // Create a new thread to  the process
         Thread thread = new Thread(process);
         
         // Add the thread to the ready queue
@@ -304,6 +342,8 @@ public class SchedulerSimulation {
         
         // Map the thread to the process, so we can track the process associated with each thread
         processMap.put(thread, process);
+
+        process.markReady();
         
         // Print a message indicating the process has entered the ready queue
         System.out.println(Colors.BLUE + "  ➕ " + Colors.BOLD + Colors.CYAN + process.getName() + 
