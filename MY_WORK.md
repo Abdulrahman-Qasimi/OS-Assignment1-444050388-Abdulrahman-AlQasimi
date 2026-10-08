@@ -230,13 +230,13 @@ first time it runs and if it returns to ready queue then run to completion are t
 
 > 💡 **TIP:** Fill this in **last**, after all entries are written.
 
-**Total time spent on assignment**: [X hours]
+**Total time spent on assignment**: [1.5 hours]
 
-**Most challenging part**:
+**Most challenging part**: implementing waiting Time.
 
-**Most interesting learning**:
+**Most interesting learning**: the use of thread start and join.
 
-**What I would do differently next time**:
+**What I would do differently next time**: I would read more carefully then code. 
 
 ---
 
