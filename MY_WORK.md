@@ -130,64 +130,62 @@
 ## Your Development Log
 
 ### Entry 1 - [04/10/2026 05:44]
-**What I did**: made Github account and forked repository and made 3 commits today about (ID as a seed, priority, context switch).
+**What I did**: made Github account and forked repository and made 3 commits today about (ID as a seed, priority).
 
 **Details**:
-Created the account using univirsaty email, then used Fork to the main Asssignmen,
-made 2 commit I thought diffrent dates means different hours not days,
-first commit to the code was adding my ID then commit, 
-Then I added priority as an int and using random as value and made a getter,
-and print the number based priority for each task,
-then made another commit for context switch, made a static context switch and print and value ++,
-all in the same day [Sunday 04/10/2026] but different times of the day.
+Created the account using university email, then used Fork to the main assignment,
+made the first feature priority as an int and using random as value and made a getter,
+and print the number based priority for each task, 
 
 **Challenges**:
 Seeing the visual codes of colors and Hashmap trying to find where i should add the context Switch Count increases, 
 
 **Solution**:
 I got somewhat familiar with it the colors and tried to add and change of my own code in Visual Studio,
-For Context switch count I followed the code trying to find where could be a reasonable place and found it better under while loop when adding in queue.
+
 
 **Time spent**:
-~45 Minutes 
+~20 Minutes 
 ---
 
-### Entry 2 - [07/10/2026 9PM]
-**What I did**: 
+### Entry 2 - [04/10/2026 | 7PM]
+**What I did**:
+worked on the 2nd feature which is a context switch counter 
 
+**Details**:
+I have made the context switch and declared context switch counter inside the Scheduler Simulation  and set the stating value as 0,
+and i add value to context switch counter inside while loop in the main ad lastly add system.out.println to make sure that context switch count works 
+
+**Challenges**:
+to find the right place to add to the context switch counter
+
+**Solution**:
+For Context switch count I followed the code trying to find where could be a reasonable place and found it better under while loop when adding in queue. 
+
+**Time spent**:
+~15
+---
+
+### Entry 3 - [07/10/2026 9PM]
+**What I did**: 
 I wrote about Waiting time function,
 so we now are able to know how much the task has been in the ready queue and the total turn around time. 
 
 **Details**:
-
 First I searched for how to add a table to easily view the time spent in each part to know the burst, waiting, and the turnaround in milli Seconds,
 then I put update Waiting time in  2 places one in the Run() and the other in RunToCompletion(),
 I add New Getters functions like get waiting time and get turnaround time and mark ready and update waiting time.
 
 **Challenges**:
-
 Understanding where to add update waiting time.
 
 **Solution**:
-
 first time it runs and if it returns to ready queue then run to completion are the places to get the time right.
 
 **Time spent**:
-~1 hour
+~30
 ---
 
-### Entry 3 - [Date and Time]
-**What I did**:
-
-**Details**:
-
-**Challenges**:
-
-**Solution**:
-
-**Time spent**:
-
----
 
 ### Entry 4 - [Date and Time]
 **What I did**:
