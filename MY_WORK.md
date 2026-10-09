@@ -340,7 +340,7 @@ In term of fairness these process has large burst time and getting them in and o
 
 Example from my output:
 ```
-[Paste a relevant snippet from your program output here showing a process being re-queued]
+[(https://img.sanishtech.com/u/b1b90a4888b4156e66b2fed3be1eecc9.png)]
 ```
 
 **Explanation of example:**
@@ -354,15 +354,17 @@ Example from my output:
 
 **Your Answer:** *(3-5 sentences overall; one short explanation per state)*
 
-1. **New**: [When is P1 in the New state?]
-
+1. **New**: [When is P1 in the New state?] 
+A: P1 is created inside of add processToQueue() the line Thread Thread = new thread(process);
 2. **Runnable**: [When does P1 become Runnable?]
-
+A: P1 becomes runnable when we call currentThread.start() in the scheduler loop after start
 3. **Running**: [When is P1 Running?]
-
+A: p1 is running when it is call the Run() method 
 4. **Waiting**: [When and why would a thread be Waiting?]
-
+A:  p1 can use thread.sleep() to make it wait or even the use of currentThread.join() 
 5. **Terminated**: [When is P1 Terminated?]
+A: p1 is terminated when it finishes it work or after runToCompletion() ends
+
 
 ## Question 4: Real-World Applications
 
