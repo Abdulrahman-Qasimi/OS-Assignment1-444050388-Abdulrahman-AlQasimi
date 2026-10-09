@@ -256,10 +256,10 @@ first time it runs and if it returns to ready queue then run to completion are t
 
 **Your Answer:** *(5-7 sentences)*
 
-[From this assignment I now learenmd how mulitithreading works,
+[From this assignment I now learned how multithreading works,
 I saw how to use runnable and create new thread to make the program run on and we used thread.start() . 
-The use of thread.join() that is because the main thread has to wait until the current process finishes its quantum before moving to another one, this made  me visualize the idea of multithreading and made it easy to repeet and understand,
-and I used priority filed, context switch counter, now I know how threads take turns using the cpu in Round robin.
+The use of thread.join() that is because the main thread has to wait until the current process finishes its quantum before moving to another one, this made  me visualize the idea of multithreading and made it easy to repeat and understand,
+and I used priority field, context switch counter, now I know how threads take turns using the cpu in Round robin.
 .]
 
 ## Question 2: What was the most challenging part of this assignment?
@@ -269,7 +269,7 @@ and I used priority filed, context switch counter, now I know how threads take t
 **Your Answer:** *(5-7 sentences)*
 
 [For me the most challenging part in the whole assignment was add or rather implementing the waiting time tracking,
-Yes I had to use Sustem,currentTimeMillis() I had to make sure that was updated in the correct times only which to trial and error, at the begging I add the methods outside the Process class not focusing on where the class ends,
+Yes I had to use System.currentTimeMillis() I had to make sure that was updated in the correct times only which to trial and error, at the beginning I add the methods outside the Process class not focusing on where the class ends,
 which caused me a lot of time trying to find the problem in my code when it was the getters that are out of the class, it has been a long time since I last used arryList and i wrote it wrong 2 times, but at last everything now works.]
 
 ## Question 3: How did you overcome the challenges you faced?
@@ -278,8 +278,8 @@ which caused me a lot of time trying to find the problem in my code when it was 
 
 **Your Answer:** *(5-7 sentences)*
 
-[To be honest i found the Readme helped in big details the challenges I faced were based on my coding and me not begin focused enough, But from the start of using Visual studio and understanding the code the was already there i tired to see what can i understand before adding the required features,
-i used system.out.prntln to see the priority is working as intendent.
+[To be honest i found the Readme helped in big details the challenges I faced were based on my coding and me not being focused enough, But from the start of using Visual studio and understanding the code that was already there i tried to see what can i understand before adding the required features,
+i used system.out.println to see the priority is working as intended.
 but there was something out of my understanding which is the date on the commit i thought it meant each commit for the same day different times but from where i see it it was my mistake of not understanding before committing.]
 
 ## Question 4: How can you apply multithreading concepts in real-world applications?
@@ -288,7 +288,7 @@ but there was something out of my understanding which is the date on the commit 
 
 **Your Answer:** *(5-7 sentences)*
 
-[I have made a project about a community service app the helps many places like a mosque that needs Bakhur water or even Quran or a park for kids to play will need maintaining of the swings and cleaning, Multithreading can help
+[I have made a project about a community service app that helps many places like a mosque that needs Bakhur water or even Quran or a park for kids to play needs maintaining of the swings and cleaning, Multithreading can help
 to load many donation and volunteers without freezing and ease of use for both the volunteer and the one in need,
 one thread can handle the list of needs while another thread updates the user location to show nearby request.]
 
