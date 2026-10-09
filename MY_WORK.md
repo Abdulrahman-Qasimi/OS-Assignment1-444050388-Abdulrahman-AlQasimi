@@ -374,32 +374,33 @@ A: p1 is terminated when it finishes it work or after runToCompletion() ends
 
 **Your Answer:** *(3-5 sentences per example)*
 
-### Example 1 (operating-system level): [Name of scenario]
+### Example 1 (operating-system level): [Community service app]
 
 **Description**:
-[Describe the real-world scenario.]
+[In this community service app different communities needs water clothes free cleaning services, 
+the idea can be transferred into processes,  time quantum can be the short time the app spends loading or updating one request before moving to the next, A context switch happens when the app stops workig on one needs and starts showing or updating another.]
 
 **Why Round-Robin works well here**:
-[Fairness, responsiveness, predictability?]
+[round robin works here very nicely, it keeps the app responsive so the user does not feel the screen freezing while many requests are loading it also gives ever community need of fair chance to be shown and updated]
 
-### Example 2: [Name of application/scenario]
+### Example 2: [mobile operating system ]
 
 **Description**:
-[Describe the real-world scenario or application.]
+[on a smartphone many apps run at the same time like WhatsApp, Youtube, maps, the mobile operating system gives ech app a short time slice on the CPU then switches to the next app in our simulation each process is like one running app the time quantum is the short time the phone gives to each app and the context switch is when the phone moves from one app to another.]
 
 **Why Round-Robin works well here**:
-[Fairness, responsiveness, predictability?]
+[It keeps the phone responsive so the user still opens apps and receive notifications quickly it also fair because no single app can freeze the whole phone by using the CPU all the time.]
 
 ## Summary
 
 **Key concepts I understood through these questions:**
-1.
-2.
-3.
+1.The difference between a simulated Process and a real Java Thread, and how we create the thread with new Thread(process).
+2.How Round-Robin works with the ready queue and why processes are re-queued for fairness.
+3.The thread lifecycle New to Runnable to Running to Waiting to Terminated and the role of start(), join(), and sleep().
 
 **Concepts I need to study more:**
-1.
-2.
+1.More advanced thread synchronization (like wait/notify or locks) beyond basic start and join.
+2.How the operating system schedules threads when many programs are open.
 
 ---
 
