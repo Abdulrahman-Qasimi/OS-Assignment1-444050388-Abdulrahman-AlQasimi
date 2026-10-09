@@ -322,7 +322,8 @@ one thread can handle the list of needs while another thread updates the user lo
 
 **Your Answer:** *(3-5 sentences)*
 
-[Write your answer here.]
+[in the code already there there is a class named Process and for my understanding it is there for simulating a real process but in real run of the code Java thread is used here, 
+we used thread(Process) because threads are cheap and lighter and they share the same memory space unlike making different processes, and make multithread makes communication between them are easy because they run on the same process, and thread has three functions to control them we have start() and join(), sleep() .]
 
 ## Question 2: Ready Queue Behavior
 
