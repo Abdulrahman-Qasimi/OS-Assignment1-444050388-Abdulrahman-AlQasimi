@@ -335,7 +335,8 @@ we used thread(Process) because threads are cheap and lighter and they share the
 
 **Your Answer:** *(3-5 sentences)*
 
-[Write your answer here.]
+[in Round robin scheduling, when a process dose not finish  in it is time quantum, it is put bac into the ready queue to wait fore it is next turn, in my program using my ID the outputs came out with p11 (and p10, p7, p4) was added to ready queue 3 times which means it was re queued 2 time before it was finished. 
+In term of fairness these process has large burst time and getting them in and out of is fair because it stops these long processes from keeping the CPU to them self  and gives the other process a chance to run.]
 
 Example from my output:
 ```
